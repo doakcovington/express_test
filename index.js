@@ -1,8 +1,9 @@
 const express = require('express'); //grants access to express library
 const app = express();
 
-app.get('/', (req,res) => {
-    res.send({hi: 'there'}); //get route handler
+app.get('/greeting', (req,res) => { //get route handler
+    res.send({hi: 'there'}); 
 })
 
-app.listen(5000);
+const PORT = process.env.PORT || 5000; //dynamic port for heroku
+app.listen(PORT); 
